@@ -11,15 +11,7 @@
         <h1>Sudoku Solver</h1>
         <form method="post">
             {% csrf_token %}
-            <table class="sudoku-input">
-                {% for i in "012345678" %}
-                <tr>
-                    {% for j in "012345678" %}
-                    <td><input type="number" name="cell_{{ forloop.counter0 }}" min="0" max="9" value="0"></td>
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </table>
+            {{ form.as_p }}
             <button type="submit">Solve</button>
         </form>
     </div>
